@@ -4,7 +4,8 @@
 airflow_settings.yaml
 __pycache__/
 astro
-.venv
+.venv_dbt/
+.venv_airflow/
 airflow-webserver.pid
 webserver_config.py
 airflow.cfg

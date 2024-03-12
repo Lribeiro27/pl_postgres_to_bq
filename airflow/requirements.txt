@@ -2,3 +2,6 @@
 apache-airflow
 apache-airflow-providers-google
 apache-airflow-providers-postgres
+astronomer-cosmos
+dbt-core
+dbt-bigquery

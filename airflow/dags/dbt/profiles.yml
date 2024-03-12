@@ -1,0 +1,14 @@
+data_enrichment:
+  outputs:
+    dev:
+      dataset: bronze
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /Users/lucasribeiro/Documents/Projects/dbt-specialization-449324e4d656.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: dbt-specialization
+      threads: 4
+      type: bigquery
+  target: dev
