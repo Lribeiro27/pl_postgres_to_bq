@@ -27,3 +27,18 @@ Happy modeling!
 [0m15:41:22.558797 [debug] [MainThread]: Command `dbt init` succeeded at 15:41:22.558591 after 195.67 seconds
 [0m15:41:22.559292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a32c5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae4c2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba64e60>]}
 [0m15:41:22.559808 [debug] [MainThread]: Flushing usage events
+[0m20:07:11.840999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106de8a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e1e810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e1ed50>]}
+
+
+============================== 20:07:11.843460 | b522f873-7d48-41c8-87c4-a67704ed7435 ==============================
+[0m20:07:11.843460 [info ] [MainThread]: Running with dbt=1.7.9
+[0m20:07:11.843795 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/lucasribeiro/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:07:11.844122 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/lucasribeiro/Documents/Projects/pl_postgres_bq/airflow/dags/dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:07:11.845166 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_wall_clock_time": 0.034535624, "process_user_time": 0.890555, "process_kernel_time": 0.114298, "process_mem_max_rss": "101564416", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m20:07:11.845581 [debug] [MainThread]: Command `dbt docs generate` failed at 20:07:11.845506 after 0.04 seconds
+[0m20:07:11.845784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106dce4e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105596ff0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106869940>]}
+[0m20:07:11.845976 [debug] [MainThread]: Flushing usage events

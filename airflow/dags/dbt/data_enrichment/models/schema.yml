@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: bronze  # Logical name for your source
+    database: dbt-specialization  # Your Google Cloud Project ID
+    schema: bronze  # Your BigQuery dataset name
+    tables:
+      - name: drivers  # Logical name to reference this table in dbt
+        identifier: drivers  # Actual table name in BigQuery, if different
+        description: "A table with drivers name"  # Optional: describe this table
+      - name: circuits  # Additional tables below are minimally defined; expand as needed
+      - name: constructor_results
+      - name: constructor_standings
+      - name: constructors
+      - name: driver_standings
+      - name: lap_times
+      - name: pit_stops
+      - name: qualifying
+      - name: races
+      - name: results
+      - name: seasons
+      - name: sprint_results
+      - name: status
+
+   
+  
+models:
+  - name: stg_drivers
+    description: modelo contendo os dados limpos da tabela drivers
+    columns:
+      - name: driver_id
+        description: chave primária da tabela
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_circuits
+    description: modelo contendo os dados limpos da tabela circuits
+    columns:
+      - name: circuit_id
+        description: chave primária da tabela
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_constructors
+    description: modelo contendo os dados limpos da tabela constructors
+    columns:
+      - name: constructor_id
+        description: chave primária da tabela
+        tests:
+          - unique
+          - not_null
+      
+
+
+      

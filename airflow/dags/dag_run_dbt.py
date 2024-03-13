@@ -6,6 +6,8 @@ import os
 
 from airflow.decorators import dag
 from airflow.operators.empty import EmptyOperator
+from cosmos.profiles import GoogleCloudServiceAccountFileProfileMapping
+from airflow.operators.python import PythonOperator ###
 
 from cosmos import (
     DbtDag,
@@ -16,7 +18,7 @@ from cosmos import (
 
 default_args = {
     "owner": "airflow",
-    "retries": 1,
+    "retries": 0,
     "retry_delay": 0,
     "catchup": False,
 }
@@ -27,7 +29,7 @@ DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
 profile_config = ProfileConfig(
     profile_name="data_enrichment",
     target_name="dev",
-    profiles_yml_filepath=DBT_ROOT_PATH / "profiles.yml"
+    profiles_yml_filepath=DBT_ROOT_PATH / "data_enrichment/profiles.yml"
 )
 
 dag_dbt_cosmos = DbtDag(
@@ -40,9 +42,10 @@ dag_dbt_cosmos = DbtDag(
         "full_refresh": True,
     },
 
-    schedule_interval=timedelta(minutes=30),
+    schedule_interval='@daily',
     start_date=datetime(2024, 2, 23),
     catchup=False,
     dag_id="dag_dbt_cosmos",
     default_args={"retries": 2},
 )
+

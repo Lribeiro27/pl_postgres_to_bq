@@ -2,3 +2,5 @@
 target/
 dbt_packages/
 logs/
+profiles.yml
+dbt-specialization-449324e4d656.json
